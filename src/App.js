@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-// import ReactMapGL from 'react-map-gl';
+import ReactMapGL from 'react-map-gl';
 
 function App() {
   const [viewport, setViewport] = React.useState({
@@ -19,13 +19,13 @@ function App() {
       <div className="voiceM" />
       <div className="map">
         <div className="map-container" style={{ height: 'inherit', width: '100%', borderRadius: '15px' }}>
-          {/*<ReactMapGL*/}
-          {/*  {...viewport}*/}
-          {/*  width="00px"*/}
-          {/*  height="500px"*/}
-          {/*  onViewportChange={(viewport) => setViewport(viewport)}*/}
-          {/*  mapboxApiAccessToken="pk.eyJ1IjoidmliZXNwb3QiLCJhIjoiY2p4YnN5cHY3MDB3NDN4czVrOWtpanU4aCJ9.nexbisROPDgIPDPUPm5tvQ"*/}
-          {/*/>*/}
+          <ReactMapGL
+            {...viewport}
+            width="100%"
+            height="inherit"
+            onViewportChange={(viewport) => setViewport(viewport)}
+            mapboxApiAccessToken="pk.eyJ1IjoidmliZXNwb3QiLCJhIjoiY2p4YnN5cHY3MDB3NDN4czVrOWtpanU4aCJ9.nexbisROPDgIPDPUPm5tvQ"
+          />
         </div>
       </div>
     </div>
