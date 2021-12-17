@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-import ReactMapGL from 'react-map-gl';
+import mapboxgl from 'mapbox-gl';
+
+mapboxgl.accessToken = 'pk.eyJ1IjoidmxhZHNlZ2VkYSIsImEiOiJja3g1YXRidnkxNWRpMzBvMXY4ZTFrMjg5In0.UrvwrNXzefU7EeEmALzpyg';
 
 function App() {
-  const isShowMap = false;
-  const [viewport, setViewport] = React.useState({
-    latitude: 37.7577,
-    longitude: -122.4376,
-    zoom: 8
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(-70.9);
+  const [lat, setLat] = useState(42.35);
+  const [zoom, setZoom] = useState(9);
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng, lat],
+      zoom: zoom
+    });
   });
 
   return (
@@ -19,17 +30,9 @@ function App() {
       <div className="voiceP" />
       <div className="voiceM" />
       <div className="map">
-        {isShowMap && (
-          <div className="map-container" style={ { height: 'inherit', width: '100%', borderRadius: '15px' } }>
-            <ReactMapGL
-              { ...viewport }
-              width="100%"
-              height="inherit"
-              onViewportChange={ (viewport) => setViewport(viewport) }
-              mapboxApiAccessToken="pk.eyJ1IjoidmliZXNwb3QiLCJhIjoiY2p4YnN5cHY3MDB3NDN4czVrOWtpanU4aCJ9.nexbisROPDgIPDPUPm5tvQ"
-            />
-          </div>
-        )}
+        <div className="map-container" style={ { height: 'inherit', width: '100%', borderRadius: '15px' } }>
+          <div ref={mapContainer} className="map-container" />
+        </div>
       </div>
     </div>
       </div>
