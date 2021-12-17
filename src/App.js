@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ReactMapGL from 'react-map-gl';
+// import ReactMapGL from 'react-map-gl';
 
 function App() {
   const [viewport, setViewport] = React.useState({
