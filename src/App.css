@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -14,7 +17,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +37,128 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.phone {
+  margin: 50px;
+  max-width: 320px;
+  width: 350px;
+  height: 645px;
+  padding: 0 0 20px;
+  background-color: #fff;
+  border-radius: 30px;
+  border: 15px solid #5f6679;
+  position: relative;
+}
+
+.power {
+  border-radius: 2px;
+  width: 15px;
+  right: -18px;
+  height: 60px;
+  top: 119px;
+  position: absolute;
+  background: #5f6679;
+}
+
+.photo {
+  border-radius: 2px;
+  width: 15px;
+  left: -18px;
+  height: 25px;
+  top: 80px;
+  position: absolute;
+  background: #5f6679;
+}
+
+.voiceP {
+  border-radius: 2px;
+  width: 15px;
+  left: -18px;
+  height: 45px;
+  top: 128px;
+  position: absolute;
+  background: #5f6679;
+}
+
+.voiceM {
+  border-radius: 2px;
+  width: 15px;
+  left: -18px;
+  height: 45px;
+  top: 189px;
+  position: absolute;
+  background: #5f6679;
+}
+
+.map {
+  height: 665px;
+  min-height: 97%;
+  display: block;
+  border-radius: 15px;
+  position: relative;
+  border: 1px solid rgb(194, 194, 194);
+  overflow: hidden;
+}
+
+.map-container {
+  position: relative;
+}
+
+.input {
+  position: absolute;
+  z-index: 11;
+  top: 55px;
+  left: 35px;
+  width: 250px;
+}
+
+.MuiFormControl-fullWidth {
+  background: white;
+  border-radius: 15px;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 15px!important;
+}
+p {
+  margin: 0;
+}
+
+.autocomplete-dropdown-container-item {
+  cursor: pointer;
+  display: flex;
+  outline: 0;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  align-items: center;
+  padding: 6px 16px;
+  justify-content: flex-start;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.autocomplete-dropdown-container {
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
+  border-top: none;
+  padding: 40px 0 1px;
+  border-radius: 0 0 30px 30px !important;
+  width: 100%;
+  margin: -30px 0;
+  overflow: hidden;
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  z-index: 1;
+  max-width: 600px;
+  background: #FFFFFF;
 }
